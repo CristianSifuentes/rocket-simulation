@@ -10,3 +10,4 @@ class Physics:
         acceleration = (thrust - (self.mass * self.gravity)) / self.mass
         self.velocity += acceleration * time
         return self.velocity
+
