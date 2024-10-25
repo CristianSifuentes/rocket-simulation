@@ -1,12 +1,11 @@
 # src/physics.py
-class Physics:
-    def __init__(self, mass, velocity):
-        self.mass = mass
-        self.velocity = velocity
-        self.gravity = 9.81  # m/s^2
+# ¡Cambio inesperado en el archivo por killer2!
+class Propulsion:
+    def __init__(self, fuel_mass, burn_rate):
+        self.fuel_mass = fuel_mass
+        self.burn_rate = burn_rate
     
-    def update(self, thrust, time):
-        # Simula la aceleración y el impacto de la gravedad
-        acceleration = (thrust - (self.mass * self.gravity)) / self.mass
-        self.velocity += acceleration * time
-        return self.velocity
+    def update_fuel(self, time):
+        fuel_consumed = self.burn_rate * time
+        self.fuel_mass -= fuel_consumed
+        return self.fuel_mass
