@@ -9,3 +9,9 @@ class Propulsion:
         fuel_consumed = self.burn_rate * time
         self.fuel_mass -= fuel_consumed
         return self.fuel_mass
+    def update(self, thrust, time):
+        # Simula la aceleración y el impacto de la gravedad
+        acceleration = (thrust - (self.mass * self.gravity)) / self.mass
+        self.velocity += acceleration * time
+        return self.velocity
+
